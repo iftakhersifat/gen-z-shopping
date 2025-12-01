@@ -37,7 +37,7 @@ export default function MyOrderList() {
             </div>
             <div className="flex flex-col gap-2">
               <Link to={`/orders/${order.id}`} className="btn btn-outline btn-sm text-white rounded-xl bg-linear-to-r from-blue-500 to-indigo-600">View</Link>
-              <button onClick={() => handleCancelOrder(order.id)} className="btn btn-error btn-sm text-white rounded-xl btn bg-linear-to-r from-red-500 to-pink-500">Cancel</button>
+              <button onClick={() => handleCancelOrder(order.id)} className="btn btn-error btn-sm text-white rounded-xl bg-linear-to-r from-red-500 to-pink-500">Cancel</button>
             </div>
           </div>
         ))}

@@ -55,3 +55,7 @@
 | Icons          | react-icons                               |
 
 ---
+
+## 🌐 Live Demo
+
+**Gen-Z Shopping** here: [https://gen-z-shopping.netlify.app](https://gen-z-shopping.netlify.app)

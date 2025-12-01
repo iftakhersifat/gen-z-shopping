@@ -4,7 +4,6 @@ import { AuthContext } from '../Firebase/AuthProvider';
 import toast from 'react-hot-toast';
 
 const Navbar = () => {
-  // for user check
  const {user, logOut}=use(AuthContext);
 
 //  logout handel
@@ -16,6 +15,15 @@ const handleLogOut =() =>{
 
   const links = <>
   <li><NavLink to="/" className={({isActive})=> isActive ? 'text-blue-600 font-medium underline' : 'hover:text-violet-500 font-medium transition'}>Home</NavLink></li>
+
+  {
+    user && <>
+    <li><NavLink to="/dashboard" className={({isActive})=> isActive ? 'text-blue-600 font-medium underline' : 'hover:text-violet-500 font-medium transition'}>Dashboard</NavLink></li> 
+    <li><NavLink to="/orderList" className={({isActive})=> isActive ? 'text-blue-600 font-medium underline' : 'hover:text-violet-500 font-medium transition'}>order list</NavLink></li> 
+
+    </>
+  }
+
   </>
 
   const moreLinks = <>
@@ -46,7 +54,7 @@ const handleLogOut =() =>{
       </ul>
     </div>
     {/* logo */}
-    <Link to="/"><h1>Gen-Z Shopping</h1></Link>
+    <Link to="/"><h1 className="text-2xl md:text-3xl font-extrabold text-blue-700">Gen-Z Shopping</h1></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

@@ -12,6 +12,11 @@ import { Toaster } from 'react-hot-toast';
 import AuthProvider from './components/Firebase/AuthProvider.jsx';
 import NotFound from './components/pages/NotFound.jsx';
 import Details from './components/pages/Details.jsx';
+import Private from './components/Firebase/Private.jsx';
+import Dashboard from './components/pages/Dashboard.jsx';
+import Orders from './components/pages/Orders.jsx';
+import OrderDetails from './components/pages/OrderDetails.jsx';
+import MyOrderList from './components/pages/MyOrderList.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +27,10 @@ const router = createBrowserRouter([
       {path:'/login', Component: Login},
       {path:'/register', Component: Register},
       {path:'/products/:id', Component: Details},
+      {path:'/orders/new', element:<Private><Orders></Orders></Private>},
+      {path:'/orders/:id', element:<Private><OrderDetails></OrderDetails></Private>},
+      {path:'/dashboard', element:<Private><Dashboard></Dashboard></Private>},
+      {path:'/orderList', element:<Private><MyOrderList></MyOrderList></Private>},
     ]
   },
   {

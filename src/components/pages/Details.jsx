@@ -18,7 +18,7 @@ export default function Details() {
   if (!product) return <p className='text-center mt-24 text-lg'>Product not found</p>;
 
   return (
-    <div className='max-w-7xl mx-auto px-4 md:px-6 lg:px-0 mt-24'>
+    <div className='max-w-6xl mx-auto px-4 md:px-6 lg:px-0 mt-24'>
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 flex flex-col md:flex-row gap-8">
         
         {/* Product Image */}
@@ -38,16 +38,12 @@ export default function Details() {
           {/* Action Buttons */}
           <div className='flex flex-col gap-4'>
             <Link 
-              to="/dashboard" 
-              className="btn btn-primary w-full sm:w-auto text-white hover:bg-blue-600"
-            >
-              Go to Dashboard
-            </Link>
-            <button 
-              className="btn btn-outline w-full sm:w-auto text-gray-800 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700"
-            >
-              Add to Cart
-            </button>
+            to={`/orders/new?productId=${product.id}`} 
+            className="btn bg-linear-to-r from-green-500 to-emerald-600 text-white hover:bg-green-700"
+          >
+            Order Now
+          </Link>
+
           </div>
         </div>
       </div>

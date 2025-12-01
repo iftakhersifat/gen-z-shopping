@@ -11,15 +11,26 @@ export default function OrderDetails() {
   if (!order) return <p className='text-center mt-24'>Order not found</p>;
 
   return (
-    <div className='max-w-3xl mx-auto px-4 mt-24'>
-      <h1 className='text-3xl font-bold mb-4'>Order Details</h1>
-      <div className='bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md'>
-        <img src={order.image} alt={order.title} className="h-40 object-contain mb-4"/>
-        <h2 className='text-xl font-semibold mb-2'>{order.title}</h2>
-        <p className='mb-2'>Price: ${order.price}</p>
-        <p className='text-gray-500 mb-4'>Order Date: {order.date}</p>
-        <Link to="/dashboard" className='btn btn-outline w-full'>Back to Dashboard</Link>
-      </div>
+    <div className="max-w-3xl mx-auto px-6 mt-12">
+    <h1 className="text-3xl md:text-4xl font-bold mb-10 text-center text-gray-900">
+    <span className="bg-linear-to-r from-red-500 to-red-700 bg-clip-text text-transparent">Order Details</span>
+    </h1>
+
+  <div className="bg-white p-8 rounded-2xl shadow-xl border border-red-200">
+
+    <div className="w-full h-64 bg-gray-100 rounded-xl mb-6 flex items-center justify-center shadow-md">
+      <img src={order.image} alt={order.title} className="object-contain h-full p-4"/>
     </div>
+
+    <h2 className="text-2xl font-semibold mb-4 text-gray-900">{order.title}</h2>
+
+    <p className="text-lg font-semibold text-red-600 mb-2">Price: ${order.price}</p>
+
+    <p className="text-gray-600 mb-6">Order Date: {order.date}</p>
+
+    <Link to="/dashboard" className="btn w-full py-3 rounded-xl text-white text-lg bg-linear-to-r from-blue-500 to-indigo-600 hover:bg-blue-700">Back to Dashboard</Link>
+  </div>
+</div>
+
   );
 }
